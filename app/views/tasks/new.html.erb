@@ -1,0 +1,45 @@
+<h1>Create new task</h1>
+<hr>
+<%= simple_form_for @task do |f| %>
+<div class="form-inputs">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= f.input :title, label: 'Title :' %>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= f.input :description, label: 'Description : ' %>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= f.input :all_day, label: 'All day?' %>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <%= f.input :start_at, label: 'Start at : ' %>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <%= f.input :end_at, label: 'End at : ' %>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <%= f.input :status, label: 'Status : ' %>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <%= f.input :priority, label: 'Priority : ' %>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= f.input :position, label: 'Location : ' %>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= f.input :url, label: 'URL : ' %>
+    </div>
+  </div>
+
+  <%= f.submit "Create", class:'btn btn-info'%>
+<% end %>
+<%= link_to "Back", root_path, class: 'btn btn-dark' %>

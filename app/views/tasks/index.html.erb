@@ -1,0 +1,25 @@
+  <h1>Task list</h1>
+  <%= link_to "Create task", new_task_path, class: 'btn btn-success' %>
+  <table class="table">
+    <thead>
+      <th>Title</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th>Status</th>
+      <th>Locate</th>
+      <th>priority</th>
+    </thead>
+    <% @tasks.each do |t| %>
+    <tbody>
+      <tr>
+      <td><%= t.title %></td>
+      <td><%= t.start_at %></td>
+      <td><%= t.end_at %></td>
+      <td><%= t.status %></td>
+      <td><%= t.locate %></td>
+      <td><%= t.priority %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+    
