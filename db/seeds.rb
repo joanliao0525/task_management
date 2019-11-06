@@ -8,6 +8,9 @@
 
 puts 'generating user...'
 1.times do
-  User.create!( :name => 'Joan' )
+  User.create!(
+    :email => 'joanliao0525@gmail.com',
+    :password => '000000'
+  )
 end
 puts 'done'
