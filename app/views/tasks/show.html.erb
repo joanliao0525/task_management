@@ -1,22 +1,22 @@
-<h1>Task : <%= @task.title %></h1>
+<h1><%= @task.title %></h1>
 
 <% if @task %>
 <ul class="user-profile col-lg-6">
-    <li>Description</li>
+    <li>Description : </li>
       <p><%= @task.description %></p>
-    <li>All day</li>
+    <li>All day : </li>
       <p><%= @task.all_day %></p>
-    <li>Start at</li>
+    <li>Start at : </li>
       <p><%= @task.start_at %></p>
-    <li>End at</li>
+    <li>End at : </li>
       <p><%= @task.end_at %></p>
-    <li>Status</li>
+    <li>Status : </li>
       <p><%= @task.status %></p>
-    <li>Priority</li>
+    <li>Priority : </li>
       <p><%= @task.priority %></p>
-    <li>Location</li>
+    <li>Location : </li>
       <p><%= @task.position %></p>
-    <li>URL</li>
+    <li>URL : </li>
       <p><%= link_to @task.url, @task.url %></p>
 </div>
 <% else %>
