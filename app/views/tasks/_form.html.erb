@@ -7,8 +7,6 @@
     </ul>
   <% end %>
 
-<%= @task.user %>
-
 <%= simple_form_for @task do |f| %>
 <div class="form-inputs">
   <div class="row">
@@ -49,6 +47,6 @@
     </div>
   </div>
 
-  <%= f.submit "Create", class:'btn btn-info'%>
+  <%= f.submit "Save", class:'btn btn-info'%>
 <% end %>
 <%= link_to "Back", root_path, class: 'btn btn-dark' %>
