@@ -16,3 +16,14 @@
  @import 'bootstrap/scss/bootstrap';
  @import "font-awesome-sprockets";
  @import "font-awesome";
+
+ // ---------- flash notice message ----------
+
+.alert{
+  margin-bottom: 0px;
+  color: #333;
+  background-color: rgba(250, 128, 114, 0.5);
+  border: none;
+  border-radius: 0;
+  z-index: 1;
+}

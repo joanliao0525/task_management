@@ -8,18 +8,22 @@
       <th>Status</th>
       <th>Locate</th>
       <th>priority</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </thead>
-    <% @tasks.each do |t| %>
     <tbody>
+    <% @tasks.each do |t| %>
       <tr>
       <td><%= t.title %></td>
       <td><%= t.start_at %></td>
       <td><%= t.end_at %></td>
       <td><%= t.status %></td>
-      <td><%= t.locate %></td>
+      <td><%= t.position %></td>
       <td><%= t.priority %></td>
+      <td><%= link_to "edit", edit_task_path(t.id), class: 'btn btn-warning' %></td>
+      <td><%= link_to "delete", task_path(t.id), class: 'btn btn-danger', method: 'delete', data: { confirm: 'Are you sure to delete this task?'} %></td>
       </tr>
-    </tbody>
     <% end %>
+    </tbody>
   </table>
     

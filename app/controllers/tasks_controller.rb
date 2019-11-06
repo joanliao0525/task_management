@@ -26,6 +26,18 @@ class TasksController < ApplicationController
     end
   end
 
+  def update
+    if @task.update(task_params)
+      redirect_to '/', notice: "Task updated successfully!"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @task.destroy
+    redirect_to '/', notice: "Task deleted successfully!"
+  end
 
 private
 
