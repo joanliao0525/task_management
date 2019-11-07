@@ -14,3 +14,5 @@ puts 'generating user...'
   )
 end
 puts 'done'
+
+# TODO: 因為資料庫關聯已經建立，所以在建立 task 時一定要有 user 才能寫入資料庫，所以暫時先用 seed 產生的第一筆 User
