@@ -8,6 +8,7 @@
       <th>Status</th>
       <th>Locate</th>
       <th>priority</th>
+      <th>URL</th>
       <th>Edit</th>
       <th>Delete</th>
     </thead>
@@ -22,8 +23,22 @@
       <td><%= task.status %></td>
       <td><%= task.position %></td>
       <td><%= task.priority %></td>
-      <td><%= link_to "edit", edit_task_path(task.id), class: 'btn btn-warning' %></td>
-      <td><%= link_to "delete", task_path(task.id), class: 'btn btn-danger', method: 'delete', data: { confirm: 'Are you sure to delete this task?'} %></td>
+      <td>
+          <% if task.url? %>
+            <%= link_to task.url, class: 'btn btn-info' do %>
+            <i class="fas fa-link"></i>
+            <% end %>
+          <% else %>
+          <% end %>
+      </td>
+      <td><%= link_to edit_task_path(task.id), class: 'btn btn-warning' do %>
+          <i class="fas fa-pencil-alt"></i>
+          <% end %>
+      </td>
+      <td><%= link_to task_path(task.id), class: 'btn btn-danger', method: 'delete', data: { confirm: 'Are you sure to delete this task?'} do %>
+      <i class="fas fa-trash-alt"></i>
+      <% end %>
+      </td>
       </tr>
     <% end %>
     </tbody>

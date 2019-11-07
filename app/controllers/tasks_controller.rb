@@ -21,7 +21,7 @@ class TasksController < ApplicationController
     @task.user = User.first 
     # TODO: 因為資料庫關聯已經建立，所以在建立 task 時一定要有 user 才能寫入資料庫，所以暫時先用 seed 產生的第一筆 User
     if @task.save
-      redirect_to root_path
+      redirect_to root_path, notice: "Task created successfully!"
     else
       render :new
     end
