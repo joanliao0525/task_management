@@ -7,7 +7,7 @@ one:
   start_at: 2019-11-05 14:39:12
   end_at: 2019-11-05 14:39:12
   status: one
-  position: MyString
+  location: MyString
   all_day: false
   url: MyString
 
@@ -18,6 +18,6 @@ two:
   start_at: 2019-11-05 14:39:12
   end_at: 2019-11-05 14:39:12
   status: two
-  position: MyString
+  location: MyString
   all_day: false
   url: MyString

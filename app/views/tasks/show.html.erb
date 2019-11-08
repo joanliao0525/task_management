@@ -2,10 +2,10 @@
 <ul class="user-profile col-lg-6">
   <li>Description : </li>
     <p><%= @task.description %></p>
-  <li>All day : </li>
-    <p><%= @task.all_day %></p>
-  <li>Start at : </li>
-    <p><%= @task.start_at %></p>
+  <%# <li>All day : </li>
+    <p><%= @task.all_day % ></p> %>
+  <li>Created at : </li>
+    <p><%= @task.created_at %></p>
   <li>End at : </li>
     <p><%= @task.end_at %></p>
   <li>Status : </li>
@@ -13,10 +13,10 @@
   <li>Priority : </li>
     <p><%= @task.priority %></p>
   <li>Location : </li>
-    <p><%= @task.position %></p>
+    <p><%= @task.location %></p>
   <li>URL : </li>
     <p><%= link_to @task.url, @task.url %></p>
 </div>
-<div class="container">
+<div class="container mx-auto">
 <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
 </div>

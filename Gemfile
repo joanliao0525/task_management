@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem 'font-awesome-sass', '~> 5.11', '>= 5.11.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
+gem 'enum_help', '~> 0.0.17'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -33,6 +34,7 @@ gem 'pg', '~> 1.1', '>= 1.1.4'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'hirb-unicode', '~> 0.0.5'
 end
 
 group :development do
