@@ -1,13 +1,13 @@
 class Task < ApplicationRecord
   belongs_to :user
-  enum status: { "Pendding" => 0,
-                 "Processing" => 1,
-                 "Completed" => 2
+  enum status: { "pendding" => 0,
+                 "processing" => 1,
+                 "completed" => 2
                 }
-  enum priority: { "Piece_of_cake" => 0,
-                   "Normal" => 1,
-                   "Kind_of_hurry" => 2,
-                   "Immediately" => 3
+  enum priority: { "piece_of_cake" => 0,
+                   "normal" => 1,
+                   "kind_of_hurry" => 2,
+                   "immediately" => 3
                   }
 
 end

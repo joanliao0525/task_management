@@ -1,13 +1,13 @@
 <hr>
-<% if @task.errors.any? %>
+<% if task.errors.any? %>
   <ul>
-    <% @task.errors.full_messages.each do |message| %>
+    <% task.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
 
-<%= simple_form_for @task do |form| %>
+<%= simple_form_for task do |form| %>
 <div class="form-inputs">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -18,10 +18,10 @@
       <%= form.input :description, as: :text, label: 'Description : ', class: 'w-100' %>
     </div>
 
-    <%# <div class="col-lg-12 col-md-12 col-sm-12">
-      <%= form.check_box :all_day, label: 'All day?' % >
-      <%= form.label :all_day, label: 'Task for all day' % >
-    </div> %>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= form.check_box :all_day, label: 'All day?' %>
+      <%= form.label :all_day, label: 'Task for all day' %>
+    </div>
 
     <div class="col-lg-6 col-md-12 col-sm-12">
       <%= form.input :status, as: :select, collection: Task.statuses.keys, include_blank: false, label: 'Status : ' %> 

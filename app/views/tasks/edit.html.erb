@@ -1,2 +1,2 @@
 <h1>Task : <%= @task.title %></h1>
-<%= render 'form', task: @task %>
+<%= render partial: 'form', locals: { task: @task } %>

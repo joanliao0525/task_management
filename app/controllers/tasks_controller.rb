@@ -21,7 +21,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user = User.first 
     if @task.save
-      redirect_to root_path, notice: "Task created successfully!"
+      redirect_to root_path, info: "Task created successfully!"
     else
       render :new
     end
@@ -29,7 +29,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to root_path, notice: "Task updated successfully!"
+      redirect_to root_path, info: "Task updated successfully!"
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to root_path, notice: "Task deleted successfully!"
+    redirect_to root_path, info: "Task deleted successfully!"
   end
 
 private
@@ -48,6 +48,6 @@ private
 
   def set_task
     @task = Task.find_by(id: params[:id])
-    redirect_to root_path, notice: "Task doesn't exist!" if @task.nil?
+    redirect_to root_path, danger: "Task doesn't exist!" if @task.nil?
   end
 end

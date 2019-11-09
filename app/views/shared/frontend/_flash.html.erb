@@ -1,6 +1,5 @@
 <% flash.each do |key, value| %>
-  <% alert_class = key %>
-  <%= content_tag :div, class: "alert alert-#{alert_class}" do %>
+  <%= content_tag :div, class: "alert alert-#{key}" do %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">
         <i class="fas fa-times-circle"></i>
