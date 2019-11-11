@@ -10,8 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render partial: 'shared/frontend/flash' if danger %>
-    <%= render partial: 'shared/frontend/flash' if info %>
+    <%= render partial: 'shared/frontend/flash' if danger || info %>
     <div class="container">
       <%= yield %>
     </div>
