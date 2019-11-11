@@ -1,0 +1,49 @@
+<hr>
+<% if task.errors.any? %>
+  <ul>
+    <% task.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= simple_form_for task do |form| %>
+<div class="form-inputs">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= form.input :title, label: 'Title :' %>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= form.input :description, as: :text, label: 'Description : ', class: 'w-100' %>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= form.check_box :all_day, label: 'All day?' %>
+      <%= form.label :all_day, label: 'Task for all day' %>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <%= form.input :status, as: :select, collection: Task.statuses.keys, include_blank: false, label: 'Status : ' %> 
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <%= form.input :priority, as: :select, collection: Task.priorities.keys, include_blank: false, label: 'Priority : ' %> 
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <%= form.input :end_at, as: :datetime, label: 'End at : ', class: 'w-100' %>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= form.input :location, label: 'Location : ' %>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <%= form.input :url, label: 'URL : ' %>
+    </div>
+  </div>
+
+  <%= form.submit "Save", class:'btn btn-info'%>
+<% end %>
+<%= link_to "Back", root_path, class: 'btn btn-dark' %>

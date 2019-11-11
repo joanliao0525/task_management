@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'generating user...'
+1.times do
+  User.create!(
+    :email => 'joanliao0525@gmail.com',
+    :password => '000000'
+  )
+end
+puts 'done'
+
+# TODO: 因為資料庫關聯已經建立，所以在建立 task 時一定要有 user 才能寫入資料庫，所以暫時先用 seed 產生的第一筆 User
