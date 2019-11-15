@@ -1,0 +1,15 @@
+current directory: /Users/joanliao/Desktop/project/task_management/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+/Users/joanliao/.rvm/rubies/ruby-2.6.3/bin/ruby -I /Users/joanliao/.rvm/rubies/ruby-2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191111-65344-cfds9v.rb extconf.rb
+creating Makefile
+
+current directory: /Users/joanliao/Desktop/project/task_management/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/joanliao/Desktop/project/task_management/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/joanliao/Desktop/project/task_management/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" install
+/Users/joanliao/1123/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20191111-65344-ggjj9a/bootsnap

@@ -1,20 +1,30 @@
 language: ruby
 rvm:
-  - 2.0.0
-  - 1.9.3
-  - jruby-19mode
-  - rbx-2
+- 2.6.3
 services:
   - postgresql
-before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-addons:
-  postgresql: 11.5
-  apt:
-    packages:
-    - postgresql-11.5-postgis-2.5.3
-before_script:
-  - psql -U postgres -c "create extension postgis"
 env:
-  global:
-    secure: kZdQtOc1mXF1ivp7tX7bBDoNbBDfl1bpzbmRykiu12u0AZ7TwS2DXgypO5caL9NPQMW+2bkIqPJ5RtDP3ah7olH+R2KWoaxOSQhUJ2hJvDmjQ7Rs1aVXAkGDtxf4VH3lxwlBC+MBCKeUGr6NuKeg5SLxBhQgCevmyqSHeZz7ILh9Ah6s1mx6NIMxfUwNvNOoeJDTmdpHAikDqvDTdSNN9XzBDREnB7Q5rFRzax2o8v4tf5vbiNhFSuQhpF4VY0GokpAmKrGnpDswxk6LcY15lB3SDxrsQtoYTfQ5TzVp0RMqZkRa1tiknP6GG8jb+K006SoELXkV+V+1s3XRNrGFGAty5IeQv8/KzhwtMeqXd+2EJWpZe/SsVLDFwhKWulipqh23nHGysf50oA2ssDwnuCN0aYVLiLlktmkeqN7glfJFYKifJ/LAgqL2EpO3LRDSCBcrghUl6G7FSZ1hTS2aibOLtrK08G7ZSOJE3EmS537y/fNSXKBH+3rKhTQv+xB1HEK2e6qGk2qAEsY7SUiP6t8oW9ctPIl/9JWZaN7DHOLpMi835PEhRbOu4iDC88JA6lT8bkTfKm8JNnM8PsJV/DQFaeu8sTPuBqhaBZJ3QAMGmCKk+0JB23NhfspmCLIU506oU2YVFk9nEiytBShVytum6VxzdlnyPXtG85ttkGY=
+  - DB=pgsql
+before_script:
+  - psql -c 'create database test18_test;' -U postgres
+script:
+  - bundle exec rake db:setup
+  - RAILS_ENV=test bundle exec rake db:migrate
+  - bundle exec rake spec
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: task_management_development
+
+test:
+  <<: *default
+  database: travis_ci_test
+
+production:
+  <<: *default
+  database: task_management_production

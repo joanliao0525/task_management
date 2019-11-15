@@ -1,0 +1,15 @@
+current directory: /Users/joanliao/Desktop/project/task_management/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/joanliao/.rvm/rubies/ruby-2.6.3/bin/ruby -I /Users/joanliao/.rvm/rubies/ruby-2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191111-65344-7olxc0.rb extconf.rb
+creating Makefile
+
+current directory: /Users/joanliao/Desktop/project/task_management/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/joanliao/Desktop/project/task_management/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/joanliao/Desktop/project/task_management/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/Users/joanliao/1123/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20191111-65344-yry4nz/skiptrace/internal
