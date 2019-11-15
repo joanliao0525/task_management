@@ -10,4 +10,6 @@ class Task < ApplicationRecord
                    "immediately" => 3
                   }
 
+  validates_presence_of :title
+
 end

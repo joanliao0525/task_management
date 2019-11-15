@@ -6,7 +6,7 @@ services:
 env:
   - DB = pgsql
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -c 'create database task_management_test;' -U postgres
 script:
   - bundle exec rake db:setup
   - RAILS_ENV=test bundle exec rake db:migrate
@@ -23,7 +23,7 @@ development:
 
 test:
   <<: *default
-  database: travis_ci_test
+  database: task_management_test
 
 production:
   <<: *default
