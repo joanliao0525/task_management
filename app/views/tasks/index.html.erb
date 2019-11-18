@@ -6,8 +6,8 @@
     <th>Created at</th>
     <th>End at</th>
     <th>Status</th>
-    <th>Locate</th>
     <th>priority</th>
+    <th>Locate</th>
     <th>URL</th>
     <th>Edit</th>
     <th>Delete</th>
@@ -19,8 +19,16 @@
         <td><%= task.created_at %></td>
         <td><%= task.end_at %></td>
         <td><%= task.status %></td>
-        <td><%= task.location %></td>
         <td><%= task.priority %></td>
+        <td>
+          <% if task.location? %>
+            <%= link_to "https://www.google.com.tw/maps/place/#{task.location}", class: 'btn btn-primary' do %>
+              <i class="fas fa-map-marker-alt"></i>
+            <% end %>
+          <% else %>
+            <button typw="button" class="btn btn-light" disabled><i class="fas fa-map-marker-alt"></i></button>
+          <% end %>
+        </td>
         <td>
           <% if task.url? %>
             <%= link_to task.url, class: 'btn btn-info' do %>
@@ -44,4 +52,3 @@
     <% end %>
   </tbody>
 </table>
-  
