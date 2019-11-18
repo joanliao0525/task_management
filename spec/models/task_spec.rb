@@ -4,7 +4,7 @@ RSpec.describe Task, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
 
   context "可以成功建立一個任務" do
-    it "任務一定要有 User" do
+    it "可以建立任務" do
       task = Task.new
       
       expect(task).to be_a Task
@@ -21,12 +21,6 @@ RSpec.describe Task, type: :model do
       task = Task.new(title: '', user_id: 1)
 
       expect(task.save).to be false
-    end
-
-    it "URL 欄位必須是 nil 或正確的格式" do
-      task = Task.new
-
-      expect(task.url?).to be false
     end
 
   end
