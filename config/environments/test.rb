@@ -45,4 +45,8 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+
+  RSpec.configure do |config|
+    config.include FactoryBot::Syntax::Methods
+  end
 end
