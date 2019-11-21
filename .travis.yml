@@ -4,29 +4,10 @@ rvm:
 services:
   - postgresql
 env:
-  - DB = pgsql
+  - DB=pgsql
 before_script:
   - psql -c 'create database task_management_test;' -U postgres
-
 script:
   - bundle exec rake db:setup
   - RAILS_ENV=test bundle exec rake db:migrate
   - bundle exec rake spec
-  
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
-development:
-  <<: *default
-  database: task_management_development
-
-test:
-  <<: *default
-  database: task_management_test
-
-production:
-  <<: *default
-  database: task_management_production
