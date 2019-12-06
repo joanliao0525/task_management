@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Task, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
   # user = User.create(email: 'joanliao@outlook.com', password: '000000')
-  let(:user) { User.create(email: 'joanliao@outlook.com', password: '000000') }
+  let(:user) { User.create :user }
 
   context "建立任務" do
 
