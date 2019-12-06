@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature "Tasks", type: :feature do
-  # pending "add some scenarios (or delete) #{__FILE__}"
-  user = User.create(email: 'joanliao@outlook.com', password: '000000')
+RSpec.describe Task, type: :model do
+  # pending "add some examples to (or delete) #{__FILE__}"
+  # user = User.create(email: 'joanliao@outlook.com', password: '000000')
+  let(:user) { User.create(email: 'joanliao@outlook.com', password: '000000') }
 
   context "建立任務" do
 
