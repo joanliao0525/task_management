@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'font-awesome-sass', '~> 5.11', '>= 5.11.2'
+gem 'font_awesome5_rails'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'enum_help', '~> 0.0.17'
 
