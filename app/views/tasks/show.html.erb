@@ -14,16 +14,24 @@
     <p><%= @task.priority %></p>
   <li>Location : </li>
     <p>
-      <%= link_to "https://www.google.com.tw/maps/place/#{@task.location}" do %>
-        <%= @task.location %>
-        <i class="fas fa-link"></i>
+      <% if @task.location? %>
+        <%= link_to "https://www.google.com.tw/maps/place/#{@task.location}" do %>
+          <%= @task.location %>
+          <i class="fas fa-link"></i>
+        <% end %>
+      <% else %>
+        No location has filled.
       <% end %>
     </p>
   <li>URL : </li>
     <p>
-      <%= link_to @task.url do %>
-        <%= @task.url %>
-        <i class="fas fa-link"></i>
+      <% if @task.url? %>
+        <%= link_to @task.url do %>
+          <%= @task.url %>
+          <i class="fas fa-link"></i>
+        <% end %>
+      <% else %>
+        No URL has filled.
       <% end %>
     </p>
 <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
