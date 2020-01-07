@@ -19,6 +19,7 @@ development:
 test:
   <<: *default
   database: task_management_test
+  min_messages: WARNING
 
 production:
   <<: *default

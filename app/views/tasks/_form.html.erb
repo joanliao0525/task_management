@@ -1,6 +1,6 @@
 <hr>
 <% if task.errors.any? %>
-  <ul>
+  <ul class="alert alert-danger">
     <% task.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>

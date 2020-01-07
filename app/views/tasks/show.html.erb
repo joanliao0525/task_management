@@ -1,4 +1,4 @@
-<h1><%= @task.title %></h1>
+<h1 class="col-lg-6"><%= @task.title %></h1>
 <ul class="user-profile col-lg-6">
   <li>Description : </li>
     <p><%= @task.description %></p>
@@ -13,10 +13,25 @@
   <li>Priority : </li>
     <p><%= @task.priority %></p>
   <li>Location : </li>
-    <p><%= @task.location %></p>
+    <p>
+      <% if @task.location? %>
+        <%= link_to "https://www.google.com.tw/maps/place/#{@task.location}" do %>
+          <%= @task.location %>
+          <i class="fas fa-link"></i>
+        <% end %>
+      <% else %>
+        No location has filled.
+      <% end %>
+    </p>
   <li>URL : </li>
-    <p><%= link_to @task.url, @task.url %></p>
-</div>
-<div class="container mx-auto">
+    <p>
+      <% if @task.url? %>
+        <%= link_to @task.url do %>
+          <%= @task.url %>
+          <i class="fas fa-link"></i>
+        <% end %>
+      <% else %>
+        No URL has filled.
+      <% end %>
+    </p>
 <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
-</div>
