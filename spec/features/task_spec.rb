@@ -10,7 +10,7 @@ RSpec.feature "Task", type: :feature do
     scenario "新增任務" do
       visit root_path
       click_on "Create task"
-      fill_in "Title", with: "sleep"
+      fill_in "Title", with: "task titile"
       click_button "Save"
     end
   end
